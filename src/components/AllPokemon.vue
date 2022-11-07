@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex justify-center items-center">
     <div>
-      <q-card class="card-content" style="max-width: 410px; border-radius: 12px">
-        <q-card-section class="q-pa-xs" style="z-index: 60; background: #fff">
+      <q-card class="card-content">
+        <q-card-section class="q-pa-xs bg-grey-1" style="z-index: 60;">
           <img src="../assets/pokedexQuasarV2.png" style="width: 100%; height: 300px" />
           <form @submit.prevent="
             showDetail($POKEDEX_SPECIES + searchvalue + `/`, searchvalue)
@@ -22,15 +22,16 @@
 
         <q-separator />
 
-        <q-card-section class="my-card scroll">
+        <q-card-section class="my-card bg-grey-1 scroll">
           <q-intersection v-for="({ id, name }, i) in pokemons" :key="i" transition="scale"
             class="intersection-height q-pa-sm" style="height: 120px">
             <q-btn class="q-pa-md" padding="xs" push>
+              <q-badge color="blue-6" floating transparent>{{ id }}</q-badge>
               <img style="filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.3))" class="cursor-pointer"
                 :src="$POKEDEX_SPRITES + id + '.png'" width="80" height="80"
                 @click.prevent="showDetail($POKEDEX_SPECIES + id + `/`, id)" />
               <q-tooltip class="text-capitalize bg-light-blue-8" transition-show="scale" transition-hide="scale"
-                anchor="top middle" self="top middle" style="z-index: 1">
+                anchor="bottom middle" self="bottom middle" style="z-index: 1">
                 {{ name }}
               </q-tooltip>
             </q-btn>
@@ -143,6 +144,8 @@ onMounted(() => {
 @import url("https://fonts.googleapis.com/css?family=Acme");
 
 .card-content {
+  max-width: 410px;
+  border-radius: 12px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),

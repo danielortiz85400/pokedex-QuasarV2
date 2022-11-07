@@ -22,8 +22,8 @@
 
         <!-- EVOLUCIONES -->
         <div class="q-gutter-y-sm">
-          <q-option-group v-model="tab" class="flex justify-center options-group__tabs" :color="props.colorMain"
-            :options="[
+          <q-option-group v-model="tab" class="flex justify-center options-group__tabs"
+            :color="['white'].includes(props.colorMain) ? 'blue' : props.colorMain" :options="[
               { label: 'Evolutions', value: 'Evolutions' },
               { label: 'Details', value: 'Details' },
             ]" />
@@ -206,7 +206,7 @@ const onMouseMove = () => {
   letter-spacing: 4px;
   margin-top: -25px;
   cursor: pointer;
-  color: #ffffff;
+  color: #fff;
   -webkit-text-stroke: 0.4px rgba(v-bind(pokemonColorMain), 0.6);
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),

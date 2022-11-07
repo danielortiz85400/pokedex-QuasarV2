@@ -48,7 +48,8 @@ const showDetail = async (pokedexSpecies, idPokemon) => {
   }
   $q.loading.show();
   emit("onDialogCancel");
-  const { existingEvolutions, id, colorMain, name } = await usePokedexFind(
+  const { existingEvolutions, id, colorMain, name,egg_groups,
+    pal_park_encounters } = await usePokedexFind(
     pokedexSpecies,
     idPokemon
   );
@@ -60,6 +61,8 @@ const showDetail = async (pokedexSpecies, idPokemon) => {
       id,
       colorMain,
       name,
+      egg_groups,
+      pal_park_encounters
     },
   });
   $q.loading.hide();

@@ -76,10 +76,10 @@ const colorMainRgb = colorTransform(props.colorMain);
 
 //Mejora de aspecto (COLOR AMARILLO Y BLANCO) en q-toolbar y q-tab-panel
 const colorCorrectionToolbar = computed(() =>
-  ["yellow", "white"].includes(props.colorMain) ? "248, 176, 49" : colorMainRgb
+  ["yellow", "white"].includes(props.colorMain) ? "254,167,39" : colorMainRgb
 );
 const colorCorrectionTabPanel = computed(() =>
-  ["yellow", "white"].includes(props.colorMain) ? "orange-4" : props.colorMain
+  ["yellow", "white"].includes(props.colorMain) ? "amber-6" : props.colorMain
 );
 const description = ref({
   ...props.detailsDes,
